@@ -1,0 +1,96 @@
+#landing-page {
+  min-height: 100vh;
+  // background: url('../../../assets/bg-forest.svg') no-repeat center;
+  // background: url('../../../assets/landing_page_api.svg') no-repeat center;
+  background: no-repeat center;
+  background-image: linear-gradient(rgba(31,30,90,0.5),rgba(31,30,90,0.5)), url('../../../assets/landing_page_api.svg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    height: 60px;
+    background: $neutral-10;
+    border: 1px solid $neutral-40;
+    padding: 0.75rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    .dropdown-user {
+      list-style: none;
+
+      .dropdown-user-link {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 4px;
+          overflow: hidden;
+
+          .avatar-content {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+          }
+        }
+
+        &::after {
+          border: 0;
+          height: 20px;
+          width: 20px;
+          background: url('../../../assets/icons/ic-chevron-down.svg');
+        }
+      }
+    }
+  }
+
+  .content {
+    margin-block: auto;
+
+    .card {
+      margin-bottom: 0;
+      border-radius: 12px !important;
+      box-shadow: none;
+
+      .card-body {
+        padding: 0;
+        padding-top: 2.5rem;
+        overflow: hidden;
+
+        .menu-list {
+          margin-top: calc(2.5rem + 2.778vw);
+
+          a {
+            outline: 1px solid $neutral-30;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.688rem;
+
+            .menu-text {
+              font-size: 18px;
+              line-height: 38px;
+              letter-spacing: 0.5px;
+              color: $neutral-100;
+            }
+
+            &:last-of-type {
+              border-radius: 0 0 12px 0;
+            }
+
+            &:hover {
+              background-color: $secondary-50;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,49 @@
+.react-dataTable {
+  overflow: visible !important;
+
+  .rdt_TableHead .rdt_TableHeadRow .rdt_TableCol,
+  .rdt_TableBody .rdt_TableRow .rdt_TableCell {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+  }
+
+  .rdt_TableHead {
+    .rdt_TableHeadRow {
+      > div {
+        color: $secondary-500;
+        background: $main-color;
+
+        &:first-of-type {
+          border-top-left-radius: 8px;
+        }
+
+        &:last-of-type {
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .rdt_TableBody {
+    .rdt_TableRow {
+      border-left: 1px solid $neutral-40;
+      border-right: 1px solid $neutral-40;
+
+      .rdt_TableCell {
+        color: $neutral-90;
+      }
+
+      &:nth-child(even) {
+        background-color: $neutral-20;
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid $neutral-40;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.nav-link {
+  &.active {
+    border: none !important;
+    background-color: $primary;
+
+    &:hover {
+      background-color: #4aaad6 !important;
+    }
+
+    &:active {
+      background-color: #257599 !important;
+    }
+
+    &:disabled {
+      background-color: #76b5d2 !important;
+    }
+  }
+}

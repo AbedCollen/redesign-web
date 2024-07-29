@@ -1,0 +1,23 @@
+.nx-form-control,
+.nx-form-select,
+.nx-form-check {
+  .form-label {
+    font-weight: 500 !important;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.007rem;
+    color: $neutral-90;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .invalid-feedback,
+  .valid-feedback {
+    display: block !important;
+    font-weight: 400;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+
+    letter-spacing: 0.01px;
+  }
+}

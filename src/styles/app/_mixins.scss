@@ -1,0 +1,30 @@
+
+@mixin huge {
+	font-size: 60px;
+	line-height: 72px;
+	letter-spacing: 1px;
+}
+
+@mixin large {
+	font-size: 52px;
+	line-height: 64px;
+	letter-spacing: 1px;
+}
+
+@mixin medium {
+	font-size: 44px;
+	line-height: 64px;
+	letter-spacing: 1px;
+}
+
+@mixin small {
+	font-size: 36px;
+	line-height: 40px;
+	letter-spacing: 1px;
+}
+
+@mixin xsmall {
+	font-size: 24px;
+	line-height: 32px;
+	letter-spacing: 1px;
+}

@@ -1,0 +1,12 @@
+@import 'typography';
+@import 'layout';
+@import 'pages';
+@import 'components';
+@import 'utils';
+
+.app-content {
+  .content-wrapper {
+    background-color: #F9F9F9;
+    min-height: 91vh;
+  }
+}

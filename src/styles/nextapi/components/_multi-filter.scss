@@ -1,0 +1,10 @@
+.multi-filter {
+
+  &+.dropdown-menu {
+    padding: 0;
+
+    .multi-filter-footer {
+      box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.06);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.card {
+	border: none;
+	margin-bottom: 1rem;
+	box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+	transition: all 0.3s ease-in-out, background 0s, color 0s, border-color 0s;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	// border: 1px solid rgba(34, 41, 47, 0.125);
+	border-radius: 0.428rem !important;
+
+	.text-white {
+		color: #fff !important;
+	}
+
+	.card-img {
+		object-fit: cover;
+	}
+
+	.card-header{
+		padding: 1rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+	}
+
+	.card-body {
+		flex: 1 1 auto;
+		min-height: 1px;
+		padding: 1.5rem;
+	}
+
+	.card-img-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1.25rem;
+		border-radius: calc(0.428rem - 1px);
+	}
+
+	.row .col a {
+		color: $primary;
+	}
+}
+
+.dashboard-card {
+	border-radius: 16px !important;
+
+	.statistics-body {
+		padding: 0 2.4rem 2rem !important;
+		align-items: center !important;
+	}
+}

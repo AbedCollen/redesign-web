@@ -1,0 +1,40 @@
+.dropdown-toggle {
+  &::after {
+    width: calc(12px + 0.5rem);
+    height: 12px;
+    border: 0;
+    margin-left: auto;
+    border-left: 0.5rem solid transparent;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.btn {
+    &[class*='btn-']:not([class*='btn-outline-']):not([class*='btn-flat-']) {
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27white%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 class=%27feather feather-chevron-down%27%3E%3Cpolyline points=%276 9 12 15 18 9%27%3E%3C/polyline%3E%3C/svg%3E");
+      }
+    }
+
+    &[class*='btn-outline-'],
+    &[class*='btn-flat-'] {
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23404040%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 class=%27feather feather-chevron-down%27%3E%3Cpolyline points=%276 9 12 15 18 9%27%3E%3C/polyline%3E%3C/svg%3E");
+      }
+    }
+  }
+
+}
+
+.btn-group {
+  .dropdown-toggle-split {
+    &::after {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      border-left: 0;
+      background-image: url('../../../assets/icons/ic-chevron-down-white.svg');
+    }
+  }
+}

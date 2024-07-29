@@ -1,0 +1,29 @@
+.react-dataTable .rdt_TableBody .rdt_TableRow {
+	.rdt_TableCell {
+		// margin-bottom: 1rem !important;
+		// min-height: 60px !important;
+		padding: auto !important;
+
+		h6,
+		a {
+			// color: $primary;
+
+			&:hover {
+				color: $info;
+			}
+		}
+
+		//Badge
+		.badge {
+			min-width: 70px !important;
+
+			&.badge-light-secondary a {
+				color: #82868b !important;
+
+				&:hover {
+					color: #000 !important;
+				}
+			}
+		}
+	}
+}

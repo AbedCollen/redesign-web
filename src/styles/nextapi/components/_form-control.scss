@@ -1,0 +1,24 @@
+.form-control,
+.form-select,
+.input-group-text {
+  border-radius: 4px;
+  background-color: #FFFFFF !important;
+  border: 1px solid $neutral-40;
+  box-shadow: none !important;
+
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.004rem;
+  padding: 0.5rem 1rem;
+
+  &::placeholder {
+    color: $neutral-50;
+  }
+
+  &:disabled {
+    border: 1px solid $neutral-40 !important;
+    color: $neutral-60;
+    background-color: $neutral-20 !important;
+  }
+}

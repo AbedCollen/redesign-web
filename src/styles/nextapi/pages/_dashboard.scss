@@ -1,0 +1,81 @@
+#dashboard{
+    #event_alert{
+        .desc-container{
+            word-break: break-word;
+            overflow: hidden 
+        }
+        .icon{
+            font-size:14px
+        }
+        .time{
+            height:31px
+        }
+    }
+    #chart-container{
+        height:400;
+        width:400
+    }
+    #cluster-capacity-circular{
+        .pie-container{
+            max-width: 150px;
+        }
+        .legend-req{
+            height: 20px;
+            width: 40px;
+            background-image:
+              linear-gradient(90deg, #E3A5F9, #5B8AB0)
+        }
+        .legend-cap{
+            height: 20px;
+            width: 40px;
+            background-color:#F3F9FF
+        }
+    }
+    .font-size-CI{
+        font-size: 12px;
+    }
+    #project-inventory-pie{
+        .container{
+            height: 200px;
+            width: 120px; 
+        }
+        .legend1{
+            background-image: linear-gradient(264.86deg, #E3A5F9 0%, #5B8AB0 100%)
+        }
+        .legend2{
+            background-color: hsla(207, 92%, 90%, 1)
+        }
+    }
+    #cluster-metrics{
+        #line-container{
+            height: 200px;
+            width: 250px;
+            .line1{
+                color: hsla(173, 68%, 67%, 1);
+                stroke-width: 5px 
+            }
+            .line2{
+                color: hsla(357, 95%, 75%, 1);
+                stroke-width: 5px 
+            }
+        }
+        
+        .button{
+            min-width: '100px';
+        }
+        .highlighted{
+            background-image:linear-gradient(to right, #2a6995, #ebf4fb);
+        }
+    }
+    #progress-bar{
+        .progress-bar{
+            background-color: #5B8AB0;
+            border-radius: 5px;
+        }
+        .progress-bar-background{
+            background-color: #F3F9FF;
+            border-radius: 5px;
+            height: 18px;
+        }
+    }
+}

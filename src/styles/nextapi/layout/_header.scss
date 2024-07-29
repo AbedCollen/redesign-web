@@ -1,0 +1,57 @@
+.header-navbar.floating-nav {
+  margin: 0;
+  box-shadow: none;
+  width: calc(100vw - (100vw - 100%) - 260px);
+  border-radius: 0;
+  border-bottom: 1px solid $neutral-40;
+  z-index: 1032;
+  min-height: 60px;
+
+  .navbar-container {
+    padding: 0.75rem 1.5rem;
+
+    .dropdown-user {
+      .dropdown-user-link {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 4px;
+          overflow: hidden;
+
+          .avatar-content {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+          }
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          margin-left: 0.255em;
+          vertical-align: 0.255em;
+          border: 0;
+          height: 20px;
+          width: 20px;
+          background: url('../../../assets/icons/ic-chevron-down.svg');
+        }
+      }
+    }
+  }
+}
+
+.vertical-layout.vertical-menu-modern {
+  &.menu-collapsed {
+    .header-navbar.floating-nav {
+      width: calc(100vw - (100vw - 100%) - 4.4rem - 38px);
+    }
+  }
+}
+
+.navbar-floating .header-navbar-shadow {
+  display: none;
+}

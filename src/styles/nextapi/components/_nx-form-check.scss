@@ -1,0 +1,23 @@
+.nx-form-check {
+  &.check-inline {
+    .check-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .form-check-label {
+      margin-bottom: 0;
+    }
+
+    &.label-end {
+      .form-check-label,
+      .form-label {
+        order: 2;
+      }
+    }
+  }
+
+  .is-tight > div {
+    width: auto;
+  }
+
+}

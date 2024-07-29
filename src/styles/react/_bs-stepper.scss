@@ -1,0 +1,12 @@
+.bs-stepper {
+  .bs-stepper-header .step.active .step-trigger {
+    .bs-stepper-box {
+      background-color: $primary;
+    }
+    .bs-stepper-label {
+      .bs-stepper-title {
+        color: $primary;
+      }
+    }
+  }
+}

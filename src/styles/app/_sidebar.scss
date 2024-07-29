@@ -1,0 +1,472 @@
+@mixin main-menu-width($menu-width) {
+  margin-left: $menu-width;
+}
+
+@mixin menu-navbar-width($menu-width) {
+  float: left;
+  width: $menu-width;
+}
+
+@mixin vertical-menu-has-sub-arrow($arrow-font-size) {
+  &.has-sub {
+    > a:after {
+      content: '';
+      background-image: url(str-replace(str-replace($chevron-right, 'currentColor', $body-color), '#', '%23'));
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: $arrow-font-size;
+      height: $arrow-font-size;
+      width: $arrow-font-size;
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 14px;
+      transform: rotate(0deg);
+      transition: all 0.2s ease-out;
+    }
+    &.open:not(.menu-item-closing) {
+      > a:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+// Initially menu & content width for lg and up screen
+@include media-breakpoint-up(lg) {
+  .vertical-layout {
+    &.vertical-menu-modern {
+      .main-menu {
+        width: $menu-expanded-width;
+      }
+    }
+  }
+}
+
+// Initially menu & content width for md and down screen
+@include media-breakpoint-down(lg) {
+  .vertical-layout {
+    &.vertical-menu-modern {
+      // not using this class in below < 992
+      .main-menu {
+        width: 0;
+      }
+      .navbar {
+        .navbar-header {
+          width: 0;
+        }
+      }
+      .content,
+      .footer {
+        @include main-menu-width(0);
+      }
+      &.menu-collapsed {
+        .app-content,
+        .footer {
+          margin-left: 0;
+        }
+        .main-menu {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+// Initially menu & content width for sm and down screen
+@include media-breakpoint-down(sm) {
+  .vertical-layout {
+    &.vertical-menu-modern {
+      // not using this class <992
+      .main-menu {
+        width: 0;
+      }
+      .navbar {
+        .navbar-header {
+          width: 0;
+        }
+      }
+      .content,
+      .footer {
+        @include main-menu-width(0);
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// IE Specific CSS
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .vertical-menu-modern.vertical-layout .main-menu .navigation > li > a > span {
+    animation: none;
+  }
+}
+
+.vertical-overlay-menu {
+  //Content expanded
+  .content {
+    @include main-menu-width(0);
+  }
+  //Navbar expanded
+  .navbar {
+    .navbar-header {
+      @include menu-navbar-width($menu-expanded-width);
+    }
+  }
+  // Main menu expanded
+  .main-menu {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: width 0.25s, opacity 0.25s, transform 0.25s;
+    width: $menu-expanded-width;
+    left: -($menu-expanded-width);
+
+    .navigation {
+      > li {
+        > a {
+          > svg,
+          > i {
+            margin-right: 14px;
+            float: left;
+            transition: 200ms ease all;
+            // height: 20px;
+            // width: 20px;
+            &:before {
+              transition: 200ms ease all;
+              font-size: 1.429rem;
+            }
+          }
+        }
+      }
+      li {
+        @include vertical-menu-has-sub-arrow(1rem);
+      }
+
+      .navigation-header {
+        .more-horizontal {
+          display: none;
+        }
+      }
+    }
+  }
+  &.menu-open {
+    .main-menu {
+      opacity: 1;
+      transform: translate3d($menu-expanded-width, 0, 0);
+      transition: width 0.25s, opacity 0.25s, transform 0.25s;
+    }
+  }
+  &.menu-hidden {
+    .main-menu {
+      @extend .main-menu;
+    }
+  }
+}
+
+.vertical-layout.vertical-menu-modern.menu-expanded .main-menu {
+	margin: 1.3rem 2rem 1.3rem 1rem !important;
+	border-radius: 8px !important;
+	height: 95%;
+}
+
+.header-border {
+	position: relative;
+	height: 1px;
+	width: 90%;
+	margin-inline: 12.38px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	background-image: linear-gradient(
+		to right,
+		rgba(224, 225, 226, 0),
+		#e0e1e2,
+		rgba(224, 225, 226, 0.16)
+	);
+}
+
+.navigation.navigation-main {
+	> li.nav-item {
+		&.active a {
+			background: linear-gradient(
+				171.34deg,
+				rgb(253, 254, 255),
+				rgb(215, 233, 242)
+			) !important;
+			border-radius: 8px !important;
+			box-shadow: none !important;
+			color: $text-dark !important;
+
+			.avatar {
+				color: #fff;
+			}
+		}
+
+		&.has-sub.sidebar-group-active {
+			> a {
+				background: linear-gradient(
+					171.34deg,
+					rgb(253, 254, 255),
+					rgb(215, 233, 242)
+				) !important;
+				border-radius: 8px !important;
+				box-shadow: none !important;
+				color: $text-dark !important;
+			}
+
+			.avatar {
+				color: #fff;
+			}
+
+			ul.menu-content {
+				div > li.nav-item {
+					&.active a {
+						background: none;
+						background-color: #d2e8f2;
+						box-shadow: none !important;
+						border-radius: 4px;
+						color: $text-dark;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-menu.menu-light .navigation > li {
+  & > a {
+    padding: 10px;
+  }
+
+  ul .active {
+    box-shadow: none;
+    background: none;
+  }
+}
+
+.main-menu .navbar-header .navbar-brand {
+	.brand-text {
+		color: $primary;
+	}
+}
+
+.navigation {
+	font-size: 0.9rem;
+}
+
+.main-menu .navigation > li > a {
+	svg {
+		// width: 15px !important;
+		// height: 15px !important;
+		margin: auto !important;
+	}
+}
+
+
+.vertical-layout {
+  &.vertical-menu-modern {
+    .main-menu {
+      transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0s;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      .navigation {
+        li a {
+          align-items: center;
+        }
+        > li > a svg,
+        > li > a i {
+          // height: 20px;
+          // width: 20px;
+          font-size: 1.45rem;
+          margin-right: 1.1rem;
+          flex-shrink: 0;
+        }
+        // Sub-menu icon size
+        .menu-content {
+          > li > a svg,
+          > li > a i {
+            margin-right: 1.45rem;
+            font-size: 11px;
+            // height: 11px;
+            // width: 11px;
+          }
+        }
+      }
+    }
+
+    //Vertical menu [Expanded]
+    &.menu-expanded {
+      // Main menu expanded
+      .main-menu {
+        width: $menu-expanded-width;
+        .navigation {
+          .navigation-header {
+            .more-horizontal {
+              display: none;
+            }
+          }
+          > li {
+            > a {
+              > i,
+              > svg {
+                &:before {
+                  // height: 20px;
+                  // width: 20px;
+                  font-size: 1.45rem;
+                }
+              }
+            }
+          }
+          li {
+            @include vertical-menu-has-sub-arrow($font-size-base + 0.1);
+          }
+        }
+      }
+      //Content expanded
+      .footer {
+        @include main-menu-width($menu-expanded-width);
+      }
+    }
+    //Vertical menu [Collapsed]
+    &.menu-collapsed {
+      //Navbar collapsed
+      .navbar {
+        .navbar-header {
+          @include menu-navbar-width($menu-collapsed-width);
+          .modern-nav-toggle {
+            display: none;
+          }
+          &.expanded {
+            width: $menu-expanded-width;
+            z-index: 1000;
+            .modern-nav-toggle {
+              display: block;
+            }
+          }
+        }
+        // fixed-top navbar when menu-collapsed
+        &.fixed-top {
+          left: $menu-collapsed-width;
+        }
+      }
+      // Main menu collapsed
+      .main-menu {
+        width: $menu-collapsed-width;
+
+        .navbar-header .brand-text,
+        .modern-nav-toggle {
+          display: none;
+        }
+
+        // When menu is collapsed and mouse is not hovered over menu
+        &:not(.expanded) {
+          .navbar-header .navbar-brand {
+            padding: 0 3px;
+          }
+          .navigation-header {
+            margin-left: 2.2rem;
+            span {
+              display: none;
+            }
+            .more-horizontal {
+              display: block;
+              font-size: 1.285rem;
+              width: 18px;
+              height: 18px;
+            }
+          }
+          .navigation li {
+            &:last-child {
+              margin-bottom: 1.25rem !important;
+            }
+            &.active {
+              a {
+                background: whitesmoke;
+                box-shadow: none;
+                color: #565656;
+              }
+            }
+          }
+        }
+
+        // When menu is collapsed but mouse is hovered over menu
+        &.expanded {
+          width: $menu-expanded-width;
+          .navigation {
+            > li.navigation-header {
+              span {
+                display: block;
+              }
+              .more-horizontal {
+                display: none;
+              }
+            }
+            li {
+              @include vertical-menu-has-sub-arrow(1rem);
+            }
+          }
+          .navbar-header .brand-text {
+            display: inline;
+          }
+          .modern-nav-toggle {
+            display: block;
+          }
+        }
+
+        //Navigation collapsed
+        .navigation {
+          overflow: visible;
+          > li.navigation-header {
+            span {
+              display: none;
+            }
+          }
+          > li {
+            > a {
+              text-overflow: inherit;
+            }
+          }
+        }
+      }
+      //Brand center content collapsed
+      .app-content,
+      .footer {
+        @include main-menu-width($menu-collapsed-width);
+      }
+      .header-navbar {
+        // Floating-navbar
+        &.floating-nav {
+          width: calc(100vw - (100vw - 100%) - 4.4rem - 74px);
+        }
+        // Navbar-static-top
+        &.navbar-static-top {
+          width: calc(100vw - (100vw - 100%) - 74px);
+          left: 74px;
+        }
+      }
+    }
+
+    .toggle-icon,
+    .collapse-toggle-icon {
+      margin-right: 0.425rem;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

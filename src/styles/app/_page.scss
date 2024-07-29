@@ -1,0 +1,12 @@
+.page-item {
+	border-radius: 5rem !important;
+
+	&.active {
+		.page-link {
+			background-color: black;
+		}
+	}
+	.page-link {
+		border-radius: 5rem !important;
+	}
+}

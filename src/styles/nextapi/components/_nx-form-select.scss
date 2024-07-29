@@ -1,0 +1,9 @@
+.nx-form-select {
+  .form-select {
+    &:disabled {
+      border: 1px solid $neutral-40 !important;
+      color: $neutral-60;
+      background-color: $neutral-20 !important;
+    }
+  }
+}

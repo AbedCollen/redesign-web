@@ -1,0 +1,20 @@
+.nx-avatar {
+  img,
+  .ic-wrapper {
+    background-color: $neutral-30;
+    border: 1px solid $neutral-40;
+    color: $neutral-60;
+  }
+
+  .ic-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+    min-width: inherit;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

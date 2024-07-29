@@ -1,0 +1,19 @@
+.confirmation-modal {
+  .modal-header {
+    background-color: var(--bs-modal-bg);
+    background-image: none;
+    border-bottom: 1px solid $border-color;
+
+    .header-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+  .modal-body {
+    padding: 1.875rem;
+  }
+}

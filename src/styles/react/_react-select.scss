@@ -1,0 +1,34 @@
+.react-select {
+	.select__control {
+		background-color: #f0f4fa !important;
+		border: none !important;
+		border-color: $primary;
+
+		&.select__control--is-focused {
+			background-color: #fff !important;
+			border: 1px solid $primary;
+		}
+	}
+}
+
+.select__menu,
+.react-select__menu {
+	.select__menu-list,
+	.react-select__menu-list {
+		.select__option,
+		.react-select__option {
+			&.select__option--is-focused {
+				color: $primary;
+			}
+
+			&.select__option--is-selected {
+				background-color: $primary;
+				color: #fff;
+
+				&.select__option--is-focused {
+					color: #fff !important;
+				}
+			}
+		}
+	}
+}

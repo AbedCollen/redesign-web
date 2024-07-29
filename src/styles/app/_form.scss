@@ -1,0 +1,35 @@
+
+.form-label {
+	font-weight: 500 !important;
+	letter-spacing: 0.75px;
+}
+
+.form-control {
+	background-color: #f0f4fa !important;
+	// border: none !important;
+
+	&:focus {
+		background-color: #ffffff !important;
+		border: 1px solid $primary;
+	}
+
+	&:disabled {
+		background-color: #dde1e7;
+		color: white;
+		border: none;
+	}
+}
+
+input[type="checkbox"] {
+	&:checked {
+		accent-color: $primary;
+	}
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+	background-color: $primary;
+}
+
+.dropdown-grid {
+	width: 17.5rem;
+}

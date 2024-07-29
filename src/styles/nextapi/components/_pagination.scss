@@ -1,0 +1,32 @@
+.pagination.react-paginate {
+  margin-bottom: 0;
+
+  .page-item {
+    .page-link {
+      background-color: transparent;
+    }
+
+    &.active {
+      .page-link {
+        background-color: $neutral-30;
+        color: $neutral-100 !important;
+      }
+    } 
+
+    &.next {
+      .page-link {
+        &::after {
+          background-size: 24px;
+        }
+      }
+    }
+
+    &.prev {
+      .page-link {
+        &::before {
+          background-size: 24px;
+        }
+      }
+    }
+  }
+}

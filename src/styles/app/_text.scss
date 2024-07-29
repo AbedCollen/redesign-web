@@ -1,0 +1,67 @@
+
+.text-primary {
+	color: $primary;
+}
+.bg-primary {
+	background-color: $primary !important;
+	color: #fff !important;
+}
+.bg-light-primary {
+	background-color: #d0eafa !important;
+	color: #1597e5 !important;
+}
+.text-danger {
+	color: $danger !important;
+}
+.bg-danger {
+	background-color: $danger !important;
+	color: #fff !important;
+}
+.bg-light-danger {
+	background-color: #ffdddf !important;
+	color: #f90716 !important;
+}
+.text-info {
+	color: $info !important;
+}
+.bg-info {
+	background-color: $info !important;
+	color: #fff !important;
+}
+.text-success {
+	color: $success !important;
+}
+.bg-success {
+	background-color: $success !important;
+	color: #fff !important;
+}
+.bg-solid-success {
+	background-color: #49c2ae !important;
+	color: #fff !important;
+}
+.text-warning {
+	color: $warning !important;
+}
+.bg-warning {
+	background-color: $warning !important;
+	color: #fff !important;
+}
+.bg-light-warning {
+	background-color: #f5c293 !important;
+	color: $warning !important;
+}
+.bg-solid-warning {
+	background-color: #ffb72b !important;
+	color: #fff !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+	letter-spacing: 1px !important;
+}

@@ -1,0 +1,16 @@
+html {
+  body {
+    background-color: $neutral-10;
+  }
+  .content.app-content {
+    padding: 4.25rem 0 0;
+  }
+}
+
+.vertical-layout.vertical-menu-modern {
+  &.menu-collapsed {
+    .app-content {
+      margin-left: 100px;
+    }
+  }
+}

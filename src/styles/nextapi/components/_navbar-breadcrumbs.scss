@@ -1,0 +1,53 @@
+.navbar-breadcrumbs {
+  padding: 0.5rem 1rem;
+  border: 1px solid $neutral-40;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  .breadcrumb-chevron {
+    margin-left: 4px;
+    margin-right: 10px;
+  }
+
+  .input-group.navbar-api-dropdown {
+    margin-right: 0.75rem;
+    align-items: center;
+    width: 25%;
+
+    .input-group-text,
+    .form-select {
+      border: none;
+      border-radius: 0;
+      height: 100%;
+    }
+
+    .input-group-text {
+      padding: 0 0.5rem 0 0;
+    }
+
+    .form-select {
+      padding: 0 1rem 0 0;
+      border-right: 1px solid #C2C9D3;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -0.06px;
+      color: #404040;
+    }
+
+  }
+}
+
+.vertical-line {
+  display: inline-block;
+  align-self: stretch;
+  width: 1px;
+  min-height: 20px;
+  background-color: #E0E0E0;
+  opacity: 1;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 10px;
+}
+

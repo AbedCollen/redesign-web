@@ -1,0 +1,55 @@
+stages:
+  - build
+  - release
+
+variables:
+  HUSKY: 0
+  GIT_STRATEGY: fetch
+  GIT_DEPTH: 1
+  DOCKER_DRIVER: overlay2
+  OUTPUT_DIR: "dist"
+  STAGING_REGISTRY: "registry.gitlab.com"
+  CONTAINER_STAGING: $STAGING_REGISTRY/$CI_PROJECT_PATH
+  NX_AUTH_CLIENT: $NX_AUTH_CLIENT_DEV
+  NX_AUTH_REDIRECT_URL: $NX_AUTH_REDIRECT_URL_DEV
+  NX_AUTH_LOGOUT_URL: $NX_AUTH_LOGOUT_URL_DEV
+  X_BASE_URL: $X_BASE_URL_DEV
+
+
+build:
+  image: node:18-slim
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm i --legacy-peer-deps
+    - OUTPUT=$OUTPUT_DIR VERSION=$CI_COMMIT_TAG npm run build
+  artifacts:
+    paths:
+      - bin/
+      - $OUTPUT_DIR/
+  only:
+    - tags
+
+release:
+  stage: release
+  needs:
+    - build
+  image: docker:stable
+  services:
+    - name: docker:dind
+      command: ["--experimental"]
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v?([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))?(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-.]*)))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-.]+)*))?$/
+      when: on_success
+    - when: never
+  before_script:
+    - export CONTAINER_STAGING=`echo "$CONTAINER_STAGING" | tr '[:upper:]' '[:lower:]'`
+  script:
+    - echo "Deploying image for $CONTAINER_STAGING:${CI_COMMIT_TAG#v}"
+    - ls
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $STAGING_REGISTRY
+    - docker build --squash -t "$CONTAINER_STAGING:${CI_COMMIT_TAG#v}" -t "$CONTAINER_STAGING:latest" .
+    - docker push "$CONTAINER_STAGING:${CI_COMMIT_TAG#v}"
+    - docker push "$CONTAINER_STAGING:latest"

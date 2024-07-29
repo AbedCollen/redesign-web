@@ -1,0 +1,30 @@
+#tundra_traces_chart{
+
+    .timeline-span-data__left-container{
+        background-color: #FAFAFA;
+    }
+    .timeline-span-data__content{
+        background-color: #FAFAFA; 
+    }
+    .timeline-span-data__title{
+        font-size: 15px;
+    }
+    .timeline-header{
+        background-color: $neutral-30;
+        color: black;
+    }
+    .timeline-header__column-name{
+        font-weight: bold;
+    }
+    .line{
+        display:none
+    }
+    .mini-trace-viewer__graph rect{
+        height: 10px;
+        rx: 5px;
+    }
+    .mini-trace-viewer__graph g{
+        stroke:red;
+    }
+
+}

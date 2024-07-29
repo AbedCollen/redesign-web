@@ -1,0 +1,17 @@
+.nx-form-control {
+  .form-control {
+    &.nx-form-password {
+      border-right: 0;
+      &+.input-group-text {
+        border-left: 0;
+      }
+
+    }
+
+    &:disabled {
+      border: 1px solid $neutral-40 !important;
+      color: $neutral-60;
+      background-color: $neutral-20 !important;
+    }
+  }
+}

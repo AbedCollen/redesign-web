@@ -1,0 +1,87 @@
+{
+  "name": "nextcluster",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "depcheck": "nxb depcheck --prefer-wanted",
+    "clean": "nxb clean",
+    "build": "cross-env NODE_ENV=production nxb build",
+    "prebuild": "npm test",
+    "start": "nxb build --serve",
+    "test": "nxb test",
+    "lint": "nxb lint",
+    "lint:fix": "nxb lint --fix",
+    "help": "nxb help",
+    "config": "nxb config"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@monaco-editor/react": "^4.5.0",
+    "@nivo/bar": "^0.83.0",
+    "@nivo/bump": "^0.83.0",
+    "@nivo/line": "^0.83.0",
+    "@nivo/pie": "^0.83.0",
+    "@nxweb/auth": "^3.6.0-rc.10",
+    "@nxweb/core": "3.6.0-rc.24",
+    "@nxweb/eslint-config": "^3.6.0-rc.33",
+    "@nxweb/icons": "^3.6.0-rc.15",
+    "@nxweb/webfonts": "^3.6.0-rc.5",
+    "@redux-devtools/extension": "^3.2.5",
+    "classcat": "^5.0.4",
+    "antd": "^5.10.2",
+    "bootstrap": "^5.3.2",
+    "d3-time": "^2.1.1",
+    "dayjs": "^1.11.7",
+    "history": "^5.3.0",
+    "ids": "^1.0.0",
+    "nanoid": "^5.0.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-circle-progress-bar": "^0.1.4",
+    "react-circular-progressbar": "^2.1.0",
+    "react-customizable-progressbar": "^1.2.0",
+    "react-data-table-component": "^7.5.3",
+    "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-progressbar-circle": "^1.0.6",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
+    "react-toastify": "^9.0.8",
+    "reactflow": "^11.9.4",
+    "redux": "^4.1.2",
+    "redux-debounced": "^0.5.0",
+    "redux-thunk": "^2.4.2",
+    "scheduler": "^0.23.0",
+    "styled-components": "^5.3.6",
+    "thundra-trace-chart": "^1.1.1",
+    "zustand": "^4.4.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@nxweb/builder": "3.6.0-rc.35",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.0.10",
+    "@types/redux-debounced": "^0.2.19",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.34.0",
+    "husky": "^8.0.3",
+    "jest": "^29.4.2",
+    "typescript": "^5.2.2"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}

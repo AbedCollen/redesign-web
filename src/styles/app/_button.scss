@@ -1,0 +1,26 @@
+.btn-primary {
+  border: none !important;
+  background: $icon-menu-color !important;
+
+  &:hover {
+    background: $secondary-500 !important;
+  }
+
+  &:active {
+    background: #257599 !important;
+  }
+
+  &:disabled {
+    background: #76b5d2 !important;
+  }
+}
+
+.btn-outline-primary {
+  border: 1px solid $secondary-400 !important;
+  color: $secondary-400 !important;
+  background: #ffffff !important;
+
+  &:hover {
+    background: none !important;
+  }
+}

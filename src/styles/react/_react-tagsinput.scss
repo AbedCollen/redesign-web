@@ -1,0 +1,56 @@
+.react-tagsinput {
+  background-color: #f0f4fa !important;
+  border: none !important;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-top: 5px;
+
+  &.react-tagsinput--focused {
+    background-color: #fff !important;
+    // color: black !important;
+    border: 1px solid $primary;
+  }
+}
+
+.react-tagsinput--focused {
+  border-color: #7367f0;
+}
+
+.react-tagsinput-tag {
+  background-color: #7367f0;
+  border-radius: 2px;
+  border: 1px solid #7367f0;
+  color: #fff;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 2px 6px 3px 6px;
+  word-spacing: 0.2rem;
+}
+
+.react-tagsinput-remove {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.react-tagsinput-tag a::before {
+  content: " ×";
+}
+
+.react-tagsinput-input {
+  background: transparent;
+  border: 0;
+  color: #777;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 5px;
+  width: 80px;
+}

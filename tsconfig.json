@@ -1,0 +1,14 @@
+{
+  "extends": "@nxweb/builder/ts/react",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "Bundler"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*",
+    "types/index.d.ts"
+  ]
+}
